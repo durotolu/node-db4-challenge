@@ -12,9 +12,9 @@ router.get('/', (req, res) => {
     .catch(err => {
       res.status(500).json({ 'Failed to get recipes': err.message });
     });
-  });
+});
 
-  router.get('/:id/list', (req, res) => {
+router.get('/:id/shoppingList', (req, res) => {
     const { id } = req.params;
   
     Recipes.getShoppingList(id)
@@ -28,9 +28,9 @@ router.get('/', (req, res) => {
     .catch(err => {
       res.status(500).json({ 'Failed to get list': err.message });
     });
-  });
+});
 
-  router.get('/:id/instructions', (req, res) => {
+router.get('/:id/instructions', (req, res) => {
     const { id } = req.params;
   
     Recipes.getInstructions(id)
@@ -44,6 +44,6 @@ router.get('/', (req, res) => {
     .catch(err => {
       res.status(500).json({ 'Failed to get list': err.message });
     });
-  });
+});
   
   module.exports = router;
